@@ -56,4 +56,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - [@Jordan Parker](https://github.com/jordanparker32) 
 - [@Shadia Wilcox](https://github.com/shadixoxo)
 - [@Nick Miles](https://github.com/namiles)
-- [@Glory Joe-Ibekwe]()
+- [@Glory Joe-Ibekwe](https://github.com/Globell28)
