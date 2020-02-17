@@ -17,6 +17,10 @@ We are a group of senior programmers developing an application for our Software 
 
 Running React projects are simple and easy!
 
+### `npm install`
+
+After cloning the repo, cd into the directory (cd market_predictor) and run npm install. This will install the dependencies, and will then allow you to run npm start.
+
 ### `npm start`
 
 Runs the app in the development mode.
