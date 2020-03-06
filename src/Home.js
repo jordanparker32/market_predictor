@@ -11,8 +11,6 @@ class Home extends React.Component {
         return (
             <div>
                 <h1>Home</h1>
-                <h2>You are logged in</h2>
-                <button onClick={this.logout}>Logout</button>
             </div>
         )
     }

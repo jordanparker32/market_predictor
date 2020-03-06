@@ -10,37 +10,13 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import fire from './config/firebase'
-import SignUp from './SignUp';
 
-function login() {
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
 
-  fire.auth().signInWithEmailAndPassword(email, password)
-    .then((u) => {
-      console.log("Login Successful");
-    })
-    .catch((err) => {
-      console.log("Error: " + err.toString());
-    })
-}
 
-function signUp() {
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
-
-  fire.auth().createUserWithEmailAndPassword(email, password)
-    .then((u) => {
-      console.log("Creation Successful");
-    })
-    .catch((err) => {
-      console.log("Error: " + err.toString());
-    })
-}
 
 function Copyright() {
   return (
@@ -55,6 +31,8 @@ function Copyright() {
   );
 }
 
+const pColor = "#3f51b5";
+
 const useStyles = makeStyles(theme => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -64,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: pColor,
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -112,7 +90,6 @@ export default function SignIn() {
             autoComplete="current-password"
           />
           <Button
-            onClick={login}
             type="submit"
             fullWidth
             variant="contained"
@@ -121,21 +98,11 @@ export default function SignIn() {
           >
             Sign In
           </Button>
-          <Button
-            onClick={signUp}
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-          >
-            Sign Up
-          </Button>
           <Grid container>
             <Grid item xs>
             </Grid>
             <Grid item>
-              <Link to={<SignUp/>} variant="body2">
+              <Link href="/signup" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
