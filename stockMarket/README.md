@@ -1,0 +1,3 @@
+Description: This program uses an artificial recurrent network called LSTM(Long Short Term Memory) to predict the closing price of a corporation,
+(Apple inc.) using the past 60 day stock price. It is important to know that this do not predict the future stock prices just past and present. 
+You can run this code on your pycharm IDE or using google Colaboratory. In this case, i prefer using google Colaboratory
