@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "short_name": "RMUIF",
   "name": "RMUIF",
-=======
-  "short_name": "React App",
-  "name": "Create React App Sample",
->>>>>>> 5f949983a2e8754c1f1c56c531a855f681cc991b
   "icons": [
     {
       "src": "favicon.ico",
@@ -25,10 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-<<<<<<< HEAD
   "theme_color": "#2196f3",
-=======
-  "theme_color": "#000000",
->>>>>>> 5f949983a2e8754c1f1c56c531a855f681cc991b
   "background_color": "#ffffff"
 }
