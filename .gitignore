@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Created by https://www.gitignore.io/api/git,node,code,react,linux,macos,dotenv,windows,firebase,webstorm+all,webstorm+iml,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=git,node,code,react,linux,macos,dotenv,windows,firebase,webstorm+all,webstorm+iml,visualstudiocode
@@ -362,3 +363,32 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/git,node,code,react,linux,macos,dotenv,windows,firebase,webstorm+all,webstorm+iml,visualstudiocode
+=======
+<<<<<<< HEAD
+node_modules
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> Initialize project using Create React App
+>>>>>>> 5f949983a2e8754c1f1c56c531a855f681cc991b
