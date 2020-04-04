@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@material-ui/codemod": "^4.5.0",
     "@material-ui/core": "^4.9.8",
     "@material-ui/icons": "^4.9.1",
@@ -41,26 +40,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
-=======
-    "@material-ui/core": "^4.9.3",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
-    "firebase": "^7.8.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "recharts": "^2.0.0-beta.1",
-    "typeface-roboto": "0.0.75"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
->>>>>>> 5f949983a2e8754c1f1c56c531a855f681cc991b
   },
   "eslintConfig": {
     "extends": "react-app"
