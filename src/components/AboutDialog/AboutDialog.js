@@ -38,7 +38,7 @@ function AboutDialog(props) {
   return (
     <Dialog fullWidth maxWidth="xs" {...dialogProps}>
       <DialogTitle disableTypography>
-        <Typography variant="h6">About</Typography>
+        <Typography variant="h6">About iStock</Typography>
 
         <Tooltip title="Close">
           <IconButton
@@ -63,6 +63,14 @@ function AboutDialog(props) {
               <ListItemText primary="UID" secondary={user.uid} />
             </ListItem>
           )}
+
+          <ListItem>
+              <ListItemText primary="Created By" secondary="Nick Miles, Jordan Parker, Shadia Wilcox, & Gloria Joe-Ibekwe" />
+          </ListItem>
+
+          <ListItem>
+              <ListItemText primary="Class" secondary="CSC 424, Murali" />
+          </ListItem>
         </List>
       </DialogContent>
     </Dialog>

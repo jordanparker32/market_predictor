@@ -14,7 +14,7 @@ import {
   IconButton,
   Divider,
   Menu,
-  MenuItem
+  MenuItem,
 } from "@material-ui/core";
 
 import UserAvatar from "../UserAvatar";
@@ -69,10 +69,6 @@ class Bar extends Component {
         onClick: onAboutClick
       },
       {
-        name: "Profile",
-        to: user ? `/user/${user.uid}` : null
-      },
-      {
         name: "Settings",
         onClick: onSettingsClick
       },
@@ -88,7 +84,7 @@ class Bar extends Component {
         <Toolbar>
           <Box display="flex" flexGrow={1}>
             <Typography color="inherit" variant="h6">
-              {process.env.REACT_APP_TITLE}
+              iStock
             </Typography>
           </Box>
 

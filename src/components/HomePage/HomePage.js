@@ -9,9 +9,11 @@ import { auth } from "../../firebase";
 import authentication from "../../services/authentication";
 
 import EmptyState from "../EmptyState";
+import Dashboard from "../dashboard/Dashboard";
 
 import { ReactComponent as CabinIllustration } from "../../illustrations/cabin.svg";
 import { ReactComponent as InsertBlockIllustration } from "../../illustrations/insert-block.svg";
+
 
 class HomePage extends Component {
   signInWithEmailLink = () => {
@@ -73,14 +75,15 @@ class HomePage extends Component {
     const { user } = this.props;
 
     if (user) {
-      return <EmptyState image={<CabinIllustration />} />;
+      return <Dashboard/>
+      //return <EmptyState image={<CabinIllustration />} />;
     }
 
     return (
       <EmptyState
         image={<InsertBlockIllustration />}
-        title="RMUIF"
-        description="Supercharged version of Create React App with all the bells and whistles"
+        title="iStock"
+        description="A market prediction app for hobby traders"
       />
     );
   }

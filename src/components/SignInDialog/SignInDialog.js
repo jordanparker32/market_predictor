@@ -23,7 +23,7 @@ import {
 
 import { Close as CloseIcon } from "@material-ui/icons";
 
-import AuthProviderList from "../AuthProviderList";
+//import AuthProviderList from "../AuthProviderList";
 
 import constraints from "../../constraints";
 import authentication from "../../services/authentication";
@@ -408,18 +408,7 @@ class SignInDialog extends Component {
         <DialogContent>
           <Hidden xsDown>
             <Grid container direction="row">
-              <Grid item xs={4}>
-                <AuthProviderList
-                  performingAction={performingAction}
-                  onAuthProviderClick={this.signInWithAuthProvider}
-                />
-              </Grid>
-
-              <Grid item xs={1}>
-                <Divider className={classes.divider} orientation="vertical" />
-              </Grid>
-
-              <Grid item xs={7}>
+              <Grid item xs={12}>
                 <Grid container direction="column" spacing={2}>
                   <Grid item xs>
                     <TextField
@@ -466,12 +455,6 @@ class SignInDialog extends Component {
           </Hidden>
 
           <Hidden smUp>
-            <AuthProviderList
-              gutterBottom
-              performingAction={performingAction}
-              onAuthProviderClick={this.signInWithAuthProvider}
-            />
-
             <Grid container direction="column" spacing={2}>
               <Grid item xs>
                 <TextField

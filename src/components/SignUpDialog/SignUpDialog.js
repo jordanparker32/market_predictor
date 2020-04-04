@@ -285,18 +285,7 @@ class SignUpDialog extends Component {
         <Hidden xsDown>
           <DialogContent>
             <Grid container direction="row">
-              <Grid item xs={4}>
-                <AuthProviderList
-                  performingAction={performingAction}
-                  onAuthProviderClick={this.signInWithAuthProvider}
-                />
-              </Grid>
-
-              <Grid item xs={1}>
-                <Divider className={classes.divider} orientation="vertical" />
-              </Grid>
-
-              <Grid item xs={7}>
+              <Grid item xs={12}>
                 <Grid container direction="column" spacing={2}>
                   <Grid item xs>
                     <TextField
@@ -387,12 +376,6 @@ class SignUpDialog extends Component {
 
         <Hidden smUp>
           <DialogContent>
-            <AuthProviderList
-              gutterBottom
-              performingAction={performingAction}
-              onAuthProviderClick={this.signInWithAuthProvider}
-            />
-
             <Grid container direction="column" spacing={2}>
               <Grid item xs>
                 <TextField

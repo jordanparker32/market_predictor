@@ -18,7 +18,7 @@ import {
   Close as CloseIcon,
   AccountCircle as AccountCircleIcon,
   Palette as PaletteIcon,
-  Link as LinkIcon,
+  //Link as LinkIcon,
   Security as SecurityIcon
 } from "@material-ui/icons";
 
@@ -26,7 +26,7 @@ import SwipeableViews from "react-swipeable-views";
 
 import AccountTab from "../AccountTab";
 import AppearanceTab from "../AppearanceTab";
-import LinksTab from "../LinksTab";
+//import LinksTab from "../LinksTab"; Removed 
 import SecurityTab from "../SecurityTab";
 
 const styles = theme => ({
@@ -52,12 +52,6 @@ const tabs = [
     key: "appearance",
     icon: <PaletteIcon />,
     label: "Appearance"
-  },
-
-  {
-    key: "links",
-    icon: <LinkIcon />,
-    label: "Links"
   },
 
   {
@@ -153,8 +147,6 @@ class SettingsDialog extends Component {
           />
 
           <AppearanceTab theme={theme} openSnackbar={openSnackbar} />
-
-          <LinksTab theme={theme} openSnackbar={openSnackbar} />
 
           <SecurityTab
             user={user}

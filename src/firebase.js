@@ -7,14 +7,14 @@ import "firebase/storage";
 import "firebase/performance";
 
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyBePYt4po-65S1bD06QZrD1cBwdssY2Mvk",
+  authDomain: "istock-8f293.firebaseapp.com",
+  databaseURL: "https://istock-8f293.firebaseio.com",
+  projectId: "istock-8f293",
+  storageBucket: "istock-8f293.appspot.com",
+  messagingSenderId: "240658509404",
+  appId: "1:240658509404:web:4a2a72f4a434e8648c0099",
+  measurementId: "G-4VVRD6EQ7M"
 });
 
 export default firebase;
