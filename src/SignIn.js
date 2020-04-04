@@ -13,9 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import fire from './config/firebase'
-
-
 
 
 function Copyright() {
@@ -53,9 +50,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//Actual sign in form
 export default function SignIn() {
   const classes = useStyles();
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
