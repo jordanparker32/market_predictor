@@ -11,8 +11,8 @@ import authentication from "../../services/authentication";
 import EmptyState from "../EmptyState";
 import Dashboard from "../dashboard/Dashboard";
 
-import { ReactComponent as CabinIllustration } from "../../illustrations/cabin.svg";
-import { ReactComponent as InsertBlockIllustration } from "../../illustrations/insert-block.svg";
+//import { ReactComponent as CabinIllustration } from "../../illustrations/cabin.svg";
+import { ReactComponent as InsertBlockIllustration } from "../../illustrations/logo.svg";
 
 
 class HomePage extends Component {
@@ -83,7 +83,7 @@ class HomePage extends Component {
       <EmptyState
         image={<InsertBlockIllustration />}
         title="iStock"
-        description="A market prediction app for hobby traders"
+        description="A market prediction service for hobby traders"
       />
     );
   }

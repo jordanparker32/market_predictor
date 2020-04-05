@@ -80,7 +80,7 @@ class Bar extends Component {
     ];
 
     return (
-      <AppBar color="primary" position="static">
+      <AppBar style={{ background: '#0040dd', color:'#ffffff' }} position="static">
         <Toolbar>
           <Box display="flex" flexGrow={1}>
             <Typography color="inherit" variant="h6">
