@@ -10,27 +10,27 @@ function EmptyState(props) {
 
   switch (props.size) {
     case "small":
-      imageWidth = 40;
-      imageHeight = 40;
-      variant = "h6";
+      imageWidth = 20;
+      imageHeight = 20;
+      variant = "h5";
       break;
 
     case "medium":
-      imageWidth = 60;
-      imageHeight = 60;
-      variant = "h5";
-      break;
-
-    case "large":
-      imageWidth = 100;
-      imageHeight = 100;
+      imageWidth = 40;
+      imageHeight = 40;
       variant = "h4";
       break;
 
+    case "large":
+      imageWidth = 80;
+      imageHeight = 80;
+      variant = "h3";
+      break;
+
     default:
-      imageWidth = 60;
-      imageHeight = 60;
-      variant = "h5";
+      imageWidth = 40;
+      imageHeight = 40;
+      variant = "h4";
       break;
   }
 

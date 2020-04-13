@@ -16,7 +16,7 @@
     "customize-cra": "^0.9.1",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "firebase": "^7.13.2",
+    "firebase": "^7.14.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.1",
     "mdi-material-ui": "^6.13.0",
@@ -32,6 +32,7 @@
     "recharts": "^1.8.5",
     "source-map-explorer": "^2.4.2",
     "typeface-roboto": "0.0.75",
+    "unirest": "^0.6.0",
     "validate.js": "^0.13.1"
   },
   "scripts": {

@@ -17,13 +17,12 @@ import {
   Hidden,
   Grid,
   Button,
-  Divider,
   TextField
 } from "@material-ui/core";
 
 import { Close as CloseIcon } from "@material-ui/icons";
 
-import AuthProviderList from "../AuthProviderList";
+//import AuthProviderList from "../AuthProviderList";
 
 import constraints from "../../constraints";
 import authentication from "../../services/authentication";

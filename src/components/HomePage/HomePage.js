@@ -76,7 +76,6 @@ class HomePage extends Component {
 
     if (user) {
       return <Dashboard/>
-      //return <EmptyState image={<CabinIllustration />} />;
     }
 
     return (
