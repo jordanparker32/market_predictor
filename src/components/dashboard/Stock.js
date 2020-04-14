@@ -8,9 +8,9 @@ class Stock extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            stockChartXValues: [],
-            stockChartYValues: [],
-            data: []
+            //stockChartXValues: [],
+            //stockChartYValues: [],
+            dataToPlot: []
         }
     }
 
@@ -34,7 +34,6 @@ class Stock extends React.Component {
         let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockSymbol}&outputsize=compact&apikey=${API_KEY}`;
         let stockChartXValuesFunction = [];
         let stockChartYValuesFunction = [];
-        let dataToPlot = [];
 
         //Yahoo Finance
         //let API_CALL = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-histories?region=US&lang=en&symbol=${stockSymbol}&from=1231866000&to=1547524844&events=div&interval=1d`
@@ -45,6 +44,7 @@ class Stock extends React.Component {
                 "x-rapidapi-key": "8988274e15msh2d13d83d69b1f1ep1f3778jsn04038dd94367"
             }
         })*/
+
         fetch(API_CALL)
         .then(
             function(response) {
@@ -56,17 +56,17 @@ class Stock extends React.Component {
                 console.log(data);
 
                 for(var key in data['Time Series (Daily)']) {
+                    //X values/key = day in 2020-04-13 format
                     stockChartXValuesFunction.push(key);
-                    stockChartYValuesFunction.push(data['Time Series (Daily)']
-                    [key]['4. close']); // = [Time Series (Daily)][2020-04-09][4. close]
-                    dataToPlot.push(key)
+                    //Y value = closing price for the day
+                    stockChartYValuesFunction.push(data['Time Series (Daily)'][key]['4. close']); // = [Time Series (Daily)][2020-04-09][4. close]
+                    
                 }
 
                 //console.log(stockChartXValuesFunction);
                 pointerToThis.setState({
                     stockChartXValues: stockChartXValuesFunction,
-                    stockChartYValues: stockChartYValuesFunction,
-                    dataToPlot: data
+                    stockChartYValues: stockChartYValuesFunction
                 });
             }
         )
@@ -75,18 +75,13 @@ class Stock extends React.Component {
         });
     }
 
-
-    data = [
-        this.createData(this.stockChartXValues, this.stockChartYValues)
-    ];
-
     render () {
         return (
             <React.Fragment>
                 <Title>Stock - Amazon</Title>
                 <ResponsiveContainer>
                 <LineChart
-                    data={this.data}
+                    data={this.state.dataToPlot}
                     margin={{
                     top: 16,
                     right: 16,
