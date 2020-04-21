@@ -1,6 +1,6 @@
 import React from 'react';
 //import { useTheme } from '@material-ui/core/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, Tooltip } from 'recharts';
 import Title from './Title';
 
 class Stock extends React.Component {
@@ -8,42 +8,31 @@ class Stock extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            //stockChartXValues: [],
-            //stockChartYValues: [],
-            dataToPlot: []
+            stockChartXValues: [],
+            stockChartYValues: [],
         }
-    }
-
-    componentDidMount() {
-        this.fetchStock();
     }
 
     createData(day, value) {
         return { day, value };
     }
 
+
+    componentDidMount() {
+        this.fetchStock();
+    }
+
     fetchStock() {
         const pointerToThis = this;
-        console.log(pointerToThis);
 
-        //API key for alhpa advantage
-        const API_KEY = 'Y1AE6RKTQSN1HA85';
+        //Stock symbol to use in query
         let stockSymbol = 'AMZN';
 
         //Alhpa Advantage
+        const API_KEY = 'Y1AE6RKTQSN1HA85';
         let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockSymbol}&outputsize=compact&apikey=${API_KEY}`;
         let stockChartXValuesFunction = [];
         let stockChartYValuesFunction = [];
-
-        //Yahoo Finance
-        //let API_CALL = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-histories?region=US&lang=en&symbol=${stockSymbol}&from=1231866000&to=1547524844&events=div&interval=1d`
-        /*fetch(API_CALL, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
-                "x-rapidapi-key": "8988274e15msh2d13d83d69b1f1ep1f3778jsn04038dd94367"
-            }
-        })*/
 
         fetch(API_CALL)
         .then(
@@ -60,7 +49,6 @@ class Stock extends React.Component {
                     stockChartXValuesFunction.push(key);
                     //Y value = closing price for the day
                     stockChartYValuesFunction.push(data['Time Series (Daily)'][key]['4. close']); // = [Time Series (Daily)][2020-04-09][4. close]
-                    
                 }
 
                 //console.log(stockChartXValuesFunction);
@@ -73,6 +61,31 @@ class Stock extends React.Component {
         .catch(err => {
             console.log(err);
         });
+
+        //Yahoo Finance
+        /*
+        let API_CALL = `https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-historical-data?frequency=1d&filter=history&period1=1546448400&period2=1562086800&symbol=${stockSymbol}` 
+        fetch(API_CALL, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com",
+                "x-rapidapi-key": "8988274e15msh2d13d83d69b1f1ep1f3778jsn04038dd94367"
+            }
+        })
+        .then(
+            function(response) {
+                return response.json();
+            }
+        )
+        .then (
+            function(data) {
+                console.log(data);
+            }
+        )
+        .catch(err => {
+            console.log(err);
+        });
+        */
     }
 
     render () {
@@ -81,7 +94,7 @@ class Stock extends React.Component {
                 <Title>Stock - Amazon</Title>
                 <ResponsiveContainer>
                 <LineChart
-                    data={this.state.dataToPlot}
+                    data={this.state.chartData}
                     margin={{
                     top: 16,
                     right: 16,
@@ -100,6 +113,7 @@ class Stock extends React.Component {
                     </Label>
                     </YAxis>
                     <Line type="monotone" dataKey="value" dot={false} />
+                    <Tooltip/>
                 </LineChart>
                 </ResponsiveContainer>
             </React.Fragment>
