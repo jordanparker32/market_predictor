@@ -4,26 +4,28 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
-//import AppBar from '@material-ui/core/AppBar';
-//import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-//import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
-//import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-//import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Stock from './Stock';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import { mainListItems } from './listItems';
+
+import AmazonStock from './Amazon/AmazonStock';
+import AmazonInfo from './Amazon/AmazonInfo';
+import MicrosoftStock from './Microsoft/MicrosoftStock';
+import MicrosoftInfo from './Microsoft/MicrosoftInfo';
+import AppleStock from './Apple/AppleStock';
+import AppleInfo from './Apple/AppleInfo';
+import GoogleStock from './Google/GoogleStock';
+import GoogleInfo from './Google/GoogleInfo';
+import TeslaStock from './Tesla/TeslaStock';
+import TeslaInfo from './Tesla/TeslaInfo';
 
 function Copyright() {
   return (
@@ -150,35 +152,64 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Stocks */}
-            <Grid item xs={12} md={12} lg={12}>
-              <Paper className={fixedHeightPaper}>
-                <Stock />
-              </Paper>
-            </Grid>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart />
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
+            {/* Amazon */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <AmazonInfo />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Orders />
+            <Grid item xs={12} md={12} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <AmazonStock />
+              </Paper>
+            </Grid>
+            {/* Microsoft */}
+            <Grid item xs={12} md={12} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <MicrosoftStock />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <MicrosoftInfo />
+              </Paper>
+            </Grid>
+             {/* Apple */}
+             <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <AppleInfo />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <AppleStock />
+              </Paper>
+            </Grid>
+            {/* Google */}
+            <Grid item xs={12} md={12} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <GoogleStock />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <GoogleInfo />
+              </Paper>
+            </Grid>
+            {/* Tesla */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <TeslaInfo />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={12} lg={9}>
+              <Paper className={fixedHeightPaper}>
+                <TeslaStock />
               </Paper>
             </Grid>
           </Grid>
