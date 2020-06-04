@@ -20,6 +20,7 @@ print(df)
 #Get the numbers  of rows and columns in the data set
 print(df.shape)
 
+
 #Visualize the closing price history
 plt.figure(figsize=(16, 8))
 plt.title('Close Price History')
